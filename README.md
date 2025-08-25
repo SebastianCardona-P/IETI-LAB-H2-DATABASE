@@ -14,7 +14,7 @@ Este proyecto es una demostración sencilla de cómo utilizar **Spring Data** ju
 
 ```bash
 git clone <URL_DEL_REPOSITORIO>
-cd h2.database
+cd <NOMBRE_DEL_REPOSITORIO>
 ```
 
 ### 2. Ejecutar la aplicación
@@ -22,13 +22,7 @@ cd h2.database
 En la raíz del proyecto, ejecuta:
 
 ```bash
-./mvnw spring-boot:run
-```
-
-O en Windows:
-
-```bash
-mvnw.cmd spring-boot:run
+mvn spring-boot:run
 ```
 
 Esto iniciará la aplicación en el puerto **8080**.
@@ -39,9 +33,13 @@ Abre tu navegador y visita:
 
 [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/)
 
-- **JDBC URL:** `jdbc:h2:mem:testdb`
+- **JDBC URL:** `jdbc:h2:file:/data/demo`
 - **Usuario:** `sa`
-- **Contraseña:** (dejar en blanco)
+- **Contraseña:** `password`
+
+![img.png](src%2Fmain%2Fresources%2Fimg%2Fimg.png)
+
+Las crdenciales pueden variar según la configuración en `application.yaml`.
 
 ## ¿Qué se hizo?
 - Se configuró un proyecto Spring Boot con dependencias de Spring Data JPA y H2.
